@@ -1,0 +1,112 @@
+/* الخط العام */
+body {
+    font-family: 'Amiri', serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* الحاوية الرئيسية */
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 15px;
+}
+
+/* الهيدر */
+header h1 {
+    text-align: center;
+    font-size: 2.2em;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+header p {
+    text-align: center;
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* شبكة عرض الأقوام */
+.qawm-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* بطاقة القوم */
+.qawm-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.qawm-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* محتوى البطاقة */
+.qawm-card h3 {
+    margin: 0 0 10px 0;
+    color: #34495e;
+    font-size: 1.3em;
+}
+
+.type {
+    font-size: 0.95em;
+    color: #7f8c8d;
+    margin-bottom: 12px;
+}
+
+.description {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.references {
+    font-size: 0.85em;
+    color: #666;
+}
+
+/* تحميل البيانات */
+.loading {
+    text-align: center;
+    padding: 50px 0;
+    color: #555;
+}
+
+.spinner {
+    border: 4px solid #e0e0e0;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 10px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* رسالة خطأ */
+p.error {
+    text-align: center;
+    font-size: 1.2em;
+    color: #c0392b;
+    margin-top: 20px;
+}
+
+/* زينة بسيطة */
+.ornament {
+    color: #3498db;
+}
