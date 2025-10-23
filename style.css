@@ -1,95 +1,127 @@
-/* الخط العام */
+/* === الخطوط العامة والأساسية === */
 body {
     font-family: 'Amiri', serif;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: #fcfaf7; /* لون خلفية أفتح وأكثر دفئًا */
+    color: #4d2d18; /* لون نص بني داكن من لوحة الألوان */
     margin: 0;
     padding: 0;
+    line-height: 1.6;
+    direction: rtl; /* التأكد من الاتجاه للعربية */
 }
 
-/* الحاوية الرئيسية */
+/* === الحاوية الرئيسية === */
 .container {
-    max-width: 1000px;
-    margin: 20px auto;
-    padding: 15px;
-}
-
-/* الهيدر */
-header h1 {
-    text-align: center;
-    font-size: 2.2em;
-    color: #2c3e50;
-    margin-bottom: 5px;
-}
-
-header p {
-    text-align: center;
-    font-size: 1.1em;
-    color: #555;
-    margin-bottom: 25px;
-}
-
-/* شبكة عرض الأقوام */
-.qawm-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-/* بطاقة القوم */
-.qawm-card {
-    background-color: #ffffff;
-    border-radius: 10px;
+    max-width: 900px; /* تقليل العرض قليلاً ليتناسب مع البطاقات الطولية */
+    margin: 30px auto;
     padding: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    background-color: #ffffff; /* خلفية بيضاء للحاوية الرئيسية */
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); /* ظل أعمق وأكثر انتشارًا */
+}
+
+/* === الهيدر === */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0; /* فاصل خفيف */
+}
+
+header h1 {
+    font-size: 2.8em; /* حجم أكبر للعنوان */
+    color: #4d2d18; /* لون بني غامق */
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+header .subtitle { /* استخدام فئة لفقرة الهيدر */
+    font-size: 1.2em;
+    color: #8A6240; /* لون بني متوسط */
+    margin-bottom: 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* === شبكة عرض الأقوام (تعديل لتصبح عرضًا عموديًا) === */
+.qawm-grid {
+    display: flex; /* استخدام فليكس بوكس */
+    flex-direction: column; /* ترتيب العناصر عموديًا */
+    gap: 25px; /* المسافة بين البطاقات */
+    padding: 10px 0;
+}
+
+/* === بطاقة القوم === */
+.qawm-card {
+    background-color: #fdfcf9; /* خلفية بيضاء دافئة للبطاقات */
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07); /* ظل أنعم وأكثر جمالية */
     cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    border: 1px solid #eee; /* حدود خفيفة */
+    width: 100%; /* تأكد من أن البطاقة تمتد على العرض الكامل */
+    box-sizing: border-box; /* للتأكد من أن البادينج والحدود لا تزيد عن العرض الكلي */
 }
 
 .qawm-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    transform: translateY(-7px); /* تأثير رفع أكبر */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12); /* ظل أعمق عند التحويم */
+    border-color: #CABA9C; /* تغيير لون الحدود عند التحويم */
 }
 
-/* محتوى البطاقة */
+/* === محتوى البطاقة === */
 .qawm-card h3 {
-    margin: 0 0 10px 0;
-    color: #34495e;
-    font-size: 1.3em;
+    margin: 0 0 12px 0;
+    color: #4d2d18; /* لون بني غامق للعنوان */
+    font-size: 1.5em; /* حجم أكبر لعنوان البطاقة */
+    font-weight: 700;
 }
 
 .type {
-    font-size: 0.95em;
-    color: #7f8c8d;
-    margin-bottom: 12px;
+    font-size: 1em;
+    color: #4C6444; /* لون أخضر داكن من لوحة الألوان */
+    margin-bottom: 15px;
+    font-weight: 500;
 }
 
 .description {
-    font-size: 0.95em;
-    color: #555;
-    margin-bottom: 12px;
-    line-height: 1.4;
+    font-size: 0.98em;
+    color: #6d4b38; /* لون بني متوسط للنص */
+    margin-bottom: 15px;
+    line-height: 1.5;
 }
 
 .references {
-    font-size: 0.85em;
-    color: #666;
+    font-size: 0.88em;
+    color: #8A6240; /* لون بني فاتح للمراجع */
+    font-weight: 400;
+    display: flex; /* لترتيب الأيقونة والنص */
+    align-items: center;
 }
 
-/* تحميل البيانات */
-.loading {
+.references svg { /* لأيقونة الكتاب */
+    margin-left: 8px; /* مسافة بين الأيقونة والنص */
+    color: #4C6444; /* لون أخضر للأيقونة */
+    width: 18px;
+    height: 18px;
+}
+
+/* === تحميل البيانات وحالة الخطأ === */
+.loading-state, .error-message { /* استخدام فئة موحدة لحالات التحميل والخطأ */
     text-align: center;
-    padding: 50px 0;
-    color: #555;
+    padding: 80px 0;
+    color: #8A6240;
+    font-size: 1.1em;
 }
 
 .spinner {
-    border: 4px solid #e0e0e0;
-    border-top: 4px solid #3498db;
+    border: 5px solid #e0e0e0;
+    border-top: 5px solid #4C6444; /* لون أخضر للدوار */
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    margin: 0 auto 10px;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 15px;
     animation: spin 1s linear infinite;
 }
 
@@ -98,15 +130,66 @@ header p {
     100% { transform: rotate(360deg); }
 }
 
-/* رسالة خطأ */
-p.error {
-    text-align: center;
-    font-size: 1.2em;
-    color: #c0392b;
-    margin-top: 20px;
+.error-message {
+    color: #c0392b; /* لون أحمر للخطأ */
+    font-weight: 700;
 }
 
-/* زينة بسيطة */
-.ornament {
-    color: #3498db;
+/* === الفوتر (تذييل الصفحة) === */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    color: #8A6240;
+    font-size: 0.9em;
+}
+
+/* === تجاوب الشاشات الصغيرة (Mobile Responsiveness) === */
+@media (max-width: 768px) {
+    .container {
+        margin: 15px auto;
+        padding: 15px;
+        box-shadow: none; /* إزالة الظل في الجوال لتحسين الأداء */
+    }
+
+    header h1 {
+        font-size: 2.2em;
+    }
+
+    header .subtitle {
+        font-size: 1em;
+        margin-bottom: 15px;
+    }
+
+    .qawm-card {
+        padding: 20px;
+    }
+
+    .qawm-card:hover {
+        transform: translateY(-3px); /* تأثير رفع أقل في الجوال */
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    .qawm-card h3 {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header .subtitle {
+        font-size: 0.9em;
+    }
+
+    .qawm-card {
+        padding: 15px;
+    }
+
+    .description {
+        font-size: 0.9em;
+    }
 }
