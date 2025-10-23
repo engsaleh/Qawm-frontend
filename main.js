@@ -26,7 +26,6 @@ async function showQawms() {
 
             html += `<div class="qawm-card">
                 <h3>${q.name}</h3>
-                <div class="type">${q.type}</div>
                 <p class="description">${q.description.substring(0, 300)}${q.description.length > 300 ? '...' : ''}</p>
                 ${referencesHtml}
             </div>`;
